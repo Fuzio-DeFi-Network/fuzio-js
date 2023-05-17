@@ -1,0 +1,73 @@
+{
+	"name": "@fuzionetwork/contracts",
+	"version": "0.1.0",
+	"description": "Fuzio Typescript Library",
+	"author": "Marius Modlich <marius@digitalkitchen.zone>",
+	"repository": "https://github.com/Fuzio-DeFi-Network/fuzio-types",
+	"homepage": "https://fuzio.network",
+	"license": "SEE LICENSE IN LICENSE",
+	"main": "main/index.js",
+	"typings": "types/index.d.ts",
+	"directories": {
+		"lib": "src",
+		"test": "__tests__"
+	},
+	"files": [
+		"types",
+		"main"
+	],
+	"scripts": {
+		"build": "cross-env BABEL_ENV=production babel src --out-dir main --delete-dir-on-start --extensions \".tsx,.ts,.js\"",
+		"build:ts": "tsc --project ./tsconfig.json",
+		"buidl": "npm run build && npm run build:ts",
+		"codegen": "cross-env NODE_ENV=development babel-node scripts/codegen.js",
+		"prepare": "npm run build",
+		"dev": "cross-env NODE_ENV=development babel-node src/index --extensions \".tsx,.ts,.js\"",
+		"watch": "cross-env NODE_ENV=development babel-watch src/index --extensions \".tsx,.ts,.js\"",
+		"lint": "eslint src --fix",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:debug": "node --inspect node_modules/.bin/jest --runInBand"
+	},
+	"keywords": [],
+	"devDependencies": {
+		"@babel/cli": "7.21.5",
+		"@babel/core": "7.21.8",
+		"@babel/eslint-parser": "^7.21.8",
+		"@babel/node": "^7.20.7",
+		"@babel/plugin-proposal-class-properties": "7.18.6",
+		"@babel/plugin-proposal-export-default-from": "7.18.10",
+		"@babel/plugin-proposal-nullish-coalescing-operator": "7.18.6",
+		"@babel/plugin-proposal-numeric-separator": "7.18.6",
+		"@babel/plugin-proposal-object-rest-spread": "7.20.7",
+		"@babel/plugin-proposal-optional-chaining": "7.21.0",
+		"@babel/plugin-transform-runtime": "7.21.4",
+		"@babel/preset-env": "7.21.5",
+		"@babel/preset-typescript": "^7.21.5",
+		"@cosmwasm/ts-codegen": "^0.28.0",
+		"@types/jest": "^29.5.1",
+		"babel-core": "7.0.0-bridge.0",
+		"babel-jest": "29.5.0",
+		"babel-watch": "^7.7.2",
+		"cross-env": "^7.0.3",
+		"eslint": "8.40.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"jest": "^29.5.0",
+		"jest-in-case": "^1.0.2",
+		"long": "^5.2.3",
+		"prettier": "^2.8.8",
+		"regenerator-runtime": "^0.13.11",
+		"rimraf": "^5.0.0",
+		"ts-jest": "^29.1.0",
+		"typescript": "^5.0.4"
+	},
+	"dependencies": {
+		"@babel/runtime": "^7.21.5",
+		"@cosmjs/cosmwasm-stargate": "0.30.1",
+		"@cosmjs/proto-signing": "0.30.1",
+		"@cosmjs/stargate": "0.30.1",
+		"cosmwasm": "1.1.1"
+	},
+	"gitHead": "370ebb1b3c95a39f0452ef2a7d02e8fe72e516ab"
+}
