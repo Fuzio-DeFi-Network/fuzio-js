@@ -3,16 +3,23 @@
 * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
+export type Addr = string;
+export type Decimal = string;
 export type Uint128 = string;
 export interface InstantiateMsg {
     config: Config;
 }
 export interface Config {
     bet_token_denom: string;
+    dev_wallet_list: WalletInfo[];
     gaming_fee: Uint128;
     minimum_bet: Uint128;
     next_round_seconds: Uint128;
     token_denom: string;
+}
+export interface WalletInfo {
+    address: Addr;
+    ratio: Decimal;
 }
 export type ExecuteMsg = {
     update_config: {
@@ -37,10 +44,6 @@ export type ExecuteMsg = {
         round_id: Uint128;
     };
 } | {
-    distribute_fund: {
-        dev_wallet_list: WalletInfo[];
-    };
-} | {
     halt: {};
 } | {
     resume: {};
@@ -52,13 +55,11 @@ export type ExecuteMsg = {
     remove_admin: {
         old_admin: Addr;
     };
+} | {
+    modify_dev_wallet: {
+        new_dev_wallets: WalletInfo[];
+    };
 };
-export type Addr = string;
-export type Decimal = string;
-export interface WalletInfo {
-    address: Addr;
-    ratio: Decimal;
-}
 export type QueryMsg = {
     config: {};
 } | {

@@ -5,7 +5,7 @@
 */
 import { Coin } from "@cosmjs/amino";
 import { MsgExecuteContractEncodeObject } from "cosmwasm";
-import { Uint128, Config, Addr, WalletInfo } from "./FuzioNativePrediction.types";
+import { Addr, Uint128, Config, WalletInfo } from "./FuzioNativePrediction.types";
 export interface FuzioNativePredictionMessage {
     contractAddress: string;
     sender: string;
@@ -25,9 +25,6 @@ export interface FuzioNativePredictionMessage {
     collectionWinningRound: ({ roundId }: {
         roundId: Uint128;
     }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    distributeFund: ({ devWalletList }: {
-        devWalletList: WalletInfo[];
-    }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
     halt: (funds?: Coin[]) => MsgExecuteContractEncodeObject;
     resume: (funds?: Coin[]) => MsgExecuteContractEncodeObject;
     addAdmin: ({ newAdmin }: {
@@ -35,6 +32,9 @@ export interface FuzioNativePredictionMessage {
     }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
     removeAdmin: ({ oldAdmin }: {
         oldAdmin: Addr;
+    }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    modifyDevWallet: ({ newDevWallets }: {
+        newDevWallets: WalletInfo[];
     }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
 }
 export declare class FuzioNativePredictionMessageComposer implements FuzioNativePredictionMessage {
@@ -57,9 +57,6 @@ export declare class FuzioNativePredictionMessageComposer implements FuzioNative
     collectionWinningRound: ({ roundId }: {
         roundId: Uint128;
     }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
-    distributeFund: ({ devWalletList }: {
-        devWalletList: WalletInfo[];
-    }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
     halt: (funds?: Coin[]) => MsgExecuteContractEncodeObject;
     resume: (funds?: Coin[]) => MsgExecuteContractEncodeObject;
     addAdmin: ({ newAdmin }: {
@@ -67,5 +64,8 @@ export declare class FuzioNativePredictionMessageComposer implements FuzioNative
     }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
     removeAdmin: ({ oldAdmin }: {
         oldAdmin: Addr;
+    }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
+    modifyDevWallet: ({ newDevWallets }: {
+        newDevWallets: WalletInfo[];
     }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
 }

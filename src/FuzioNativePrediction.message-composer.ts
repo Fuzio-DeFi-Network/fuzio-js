@@ -8,7 +8,7 @@ import { Coin } from "@cosmjs/amino";
 import { MsgExecuteContractEncodeObject } from "cosmwasm";
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@cosmjs/encoding";
-import { Uint128, InstantiateMsg, Config, ExecuteMsg, Addr, Decimal, WalletInfo, QueryMsg, MigrateMsg, Timestamp, Uint64, Direction, FinishedRound, AdminsResponse, ClaimInfoResponse, ClaimInfo, RoundUsersResponse, BetInfo, MyCurrentPositionResponse, MyGameResponse, PendingRewardResponse, StatusResponse, NextRound, LiveRound } from "./FuzioNativePrediction.types";
+import { Addr, Decimal, Uint128, InstantiateMsg, Config, WalletInfo, ExecuteMsg, QueryMsg, MigrateMsg, Timestamp, Uint64, Direction, FinishedRound, AdminsResponse, ClaimInfoResponse, ClaimInfo, RoundUsersResponse, BetInfo, MyCurrentPositionResponse, MyGameResponse, PendingRewardResponse, StatusResponse, NextRound, LiveRound } from "./FuzioNativePrediction.types";
 export interface FuzioNativePredictionMessage {
   contractAddress: string;
   sender: string;
@@ -38,11 +38,6 @@ export interface FuzioNativePredictionMessage {
   }: {
     roundId: Uint128;
   }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
-  distributeFund: ({
-    devWalletList
-  }: {
-    devWalletList: WalletInfo[];
-  }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
   halt: (funds?: Coin[]) => MsgExecuteContractEncodeObject;
   resume: (funds?: Coin[]) => MsgExecuteContractEncodeObject;
   addAdmin: ({
@@ -54,6 +49,11 @@ export interface FuzioNativePredictionMessage {
     oldAdmin
   }: {
     oldAdmin: Addr;
+  }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
+  modifyDevWallet: ({
+    newDevWallets
+  }: {
+    newDevWallets: WalletInfo[];
   }, funds?: Coin[]) => MsgExecuteContractEncodeObject;
 }
 export class FuzioNativePredictionMessageComposer implements FuzioNativePredictionMessage {
@@ -69,11 +69,11 @@ export class FuzioNativePredictionMessageComposer implements FuzioNativePredicti
     this.closeRound = this.closeRound.bind(this);
     this.collectWinnings = this.collectWinnings.bind(this);
     this.collectionWinningRound = this.collectionWinningRound.bind(this);
-    this.distributeFund = this.distributeFund.bind(this);
     this.halt = this.halt.bind(this);
     this.resume = this.resume.bind(this);
     this.addAdmin = this.addAdmin.bind(this);
     this.removeAdmin = this.removeAdmin.bind(this);
+    this.modifyDevWallet = this.modifyDevWallet.bind(this);
   }
 
   updateConfig = ({
@@ -184,25 +184,6 @@ export class FuzioNativePredictionMessageComposer implements FuzioNativePredicti
       })
     };
   };
-  distributeFund = ({
-    devWalletList
-  }: {
-    devWalletList: WalletInfo[];
-  }, funds?: Coin[]): MsgExecuteContractEncodeObject => {
-    return {
-      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
-      value: MsgExecuteContract.fromPartial({
-        sender: this.sender,
-        contract: this.contractAddress,
-        msg: toUtf8(JSON.stringify({
-          distribute_fund: {
-            dev_wallet_list: devWalletList
-          }
-        })),
-        funds
-      })
-    };
-  };
   halt = (funds?: Coin[]): MsgExecuteContractEncodeObject => {
     return {
       typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
@@ -261,6 +242,25 @@ export class FuzioNativePredictionMessageComposer implements FuzioNativePredicti
         msg: toUtf8(JSON.stringify({
           remove_admin: {
             old_admin: oldAdmin
+          }
+        })),
+        funds
+      })
+    };
+  };
+  modifyDevWallet = ({
+    newDevWallets
+  }: {
+    newDevWallets: WalletInfo[];
+  }, funds?: Coin[]): MsgExecuteContractEncodeObject => {
+    return {
+      typeUrl: "/cosmwasm.wasm.v1.MsgExecuteContract",
+      value: MsgExecuteContract.fromPartial({
+        sender: this.sender,
+        contract: this.contractAddress,
+        msg: toUtf8(JSON.stringify({
+          modify_dev_wallet: {
+            new_dev_wallets: newDevWallets
           }
         })),
         funds
