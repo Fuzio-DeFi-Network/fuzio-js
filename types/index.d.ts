@@ -5,10 +5,17 @@
 */
 import * as _1 from "./FuzioNativePrediction.client";
 import * as _2 from "./FuzioNativePrediction.message-composer";
+import * as _4 from "./FuzioNativeIDO.client";
+import * as _5 from "./FuzioNativeIDO.message-composer";
 export declare namespace contracts {
     const FuzioNativePrediction: {
         FuzioNativePredictionMessageComposer: typeof _2.FuzioNativePredictionMessageComposer;
         FuzioNativePredictionQueryClient: typeof _1.FuzioNativePredictionQueryClient;
         FuzioNativePredictionClient: typeof _1.FuzioNativePredictionClient;
+    };
+    const FuzioNativeIDO: {
+        FuzioNativeIDOMessageComposer: typeof _5.FuzioNativeIDOMessageComposer;
+        FuzioNativeIDOQueryClient: typeof _4.FuzioNativeIDOQueryClient;
+        FuzioNativeIDOClient: typeof _4.FuzioNativeIDOClient;
     };
 }

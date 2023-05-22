@@ -1,0 +1,866 @@
+{
+  "contract_name": "fuzio_ido_contracts",
+  "contract_version": "0.1.0",
+  "idl_version": "1.0.0",
+  "instantiate": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "InstantiateMsg",
+    "type": "object",
+    "required": [
+      "admin",
+      "claim_start",
+      "ido_page",
+      "is_native",
+      "presale_period",
+      "presale_start",
+      "token_address_or_denom",
+      "token_cost",
+      "total_supply",
+      "vesting_step_period"
+    ],
+    "properties": {
+      "admin": {
+        "type": "string"
+      },
+      "claim_start": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      },
+      "ido_page": {
+        "$ref": "#/definitions/IdoInfo"
+      },
+      "is_native": {
+        "type": "boolean"
+      },
+      "presale_period": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      },
+      "presale_start": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      },
+      "token_address_or_denom": {
+        "type": "string"
+      },
+      "token_cost": {
+        "$ref": "#/definitions/Coin"
+      },
+      "total_supply": {
+        "$ref": "#/definitions/Uint128"
+      },
+      "vesting_step_period": {
+        "type": "integer",
+        "format": "uint64",
+        "minimum": 0.0
+      }
+    },
+    "additionalProperties": false,
+    "definitions": {
+      "Coin": {
+        "type": "object",
+        "required": [
+          "amount",
+          "denom"
+        ],
+        "properties": {
+          "amount": {
+            "$ref": "#/definitions/Uint128"
+          },
+          "denom": {
+            "type": "string"
+          }
+        }
+      },
+      "Description": {
+        "type": "object",
+        "required": [
+          "desc",
+          "header"
+        ],
+        "properties": {
+          "desc": {
+            "type": "string"
+          },
+          "header": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "IdoInfo": {
+        "type": "object",
+        "required": [
+          "problem",
+          "product",
+          "solution",
+          "team"
+        ],
+        "properties": {
+          "problem": {
+            "$ref": "#/definitions/Description"
+          },
+          "product": {
+            "$ref": "#/definitions/Product"
+          },
+          "socials": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/Socials"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "solution": {
+            "$ref": "#/definitions/Description"
+          },
+          "team": {
+            "$ref": "#/definitions/Team"
+          },
+          "website": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "whitepaper": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "Product": {
+        "type": "object",
+        "required": [
+          "banner_images",
+          "full_name",
+          "header",
+          "highlights",
+          "logo",
+          "long_desc",
+          "short_desc",
+          "token_symbol"
+        ],
+        "properties": {
+          "banner_images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "full_name": {
+            "type": "string"
+          },
+          "header": {
+            "type": "string"
+          },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "logo": {
+            "type": "string"
+          },
+          "long_desc": {
+            "type": "string"
+          },
+          "short_desc": {
+            "type": "string"
+          },
+          "token_symbol": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Socials": {
+        "type": "object",
+        "required": [
+          "discord",
+          "telegram",
+          "twitter"
+        ],
+        "properties": {
+          "discord": {
+            "type": "string"
+          },
+          "telegram": {
+            "type": "string"
+          },
+          "twitter": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Team": {
+        "type": "object",
+        "required": [
+          "header",
+          "members"
+        ],
+        "properties": {
+          "header": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/TeamMember"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "TeamMember": {
+        "type": "object",
+        "required": [
+          "member_desc",
+          "member_name",
+          "member_role"
+        ],
+        "properties": {
+          "member_desc": {
+            "type": "string"
+          },
+          "member_name": {
+            "type": "string"
+          },
+          "member_role": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Uint128": {
+        "description": "A thin wrapper around u128 that is using strings for JSON encoding/decoding, such that the full u128 range can be used for clients that convert JSON numbers to floats, like JavaScript and jq.\n\n# Examples\n\nUse `from` to create instances of this and `u128` to get the value out:\n\n``` # use cosmwasm_std::Uint128; let a = Uint128::from(123u128); assert_eq!(a.u128(), 123);\n\nlet b = Uint128::from(42u64); assert_eq!(b.u128(), 42);\n\nlet c = Uint128::from(70u32); assert_eq!(c.u128(), 70); ```",
+        "type": "string"
+      }
+    }
+  },
+  "execute": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ExecuteMsg",
+    "oneOf": [
+      {
+        "type": "object",
+        "required": [
+          "buy_token"
+        ],
+        "properties": {
+          "buy_token": {
+            "type": "object",
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": [
+          "claim_token"
+        ],
+        "properties": {
+          "claim_token": {
+            "type": "object",
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": [
+          "change_admin"
+        ],
+        "properties": {
+          "change_admin": {
+            "type": "object",
+            "required": [
+              "address"
+            ],
+            "properties": {
+              "address": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": [
+          "withdraw_token_not_sold_by_admin"
+        ],
+        "properties": {
+          "withdraw_token_not_sold_by_admin": {
+            "type": "object",
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    ]
+  },
+  "query": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "QueryMsg",
+    "oneOf": [
+      {
+        "type": "object",
+        "required": [
+          "get_state_info"
+        ],
+        "properties": {
+          "get_state_info": {
+            "type": "object",
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": [
+          "get_user_info"
+        ],
+        "properties": {
+          "get_user_info": {
+            "type": "object",
+            "required": [
+              "address"
+            ],
+            "properties": {
+              "address": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": [
+          "get_sale_info"
+        ],
+        "properties": {
+          "get_sale_info": {
+            "type": "object",
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": [
+          "get_claimable_amount"
+        ],
+        "properties": {
+          "get_claimable_amount": {
+            "type": "object",
+            "required": [
+              "address"
+            ],
+            "properties": {
+              "address": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": [
+          "get_claimable_time"
+        ],
+        "properties": {
+          "get_claimable_time": {
+            "type": "object",
+            "required": [
+              "address"
+            ],
+            "properties": {
+              "address": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "required": [
+          "get_user_infos"
+        ],
+        "properties": {
+          "get_user_infos": {
+            "type": "object",
+            "properties": {
+              "limit": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "format": "uint32",
+                "minimum": 0.0
+              },
+              "start_after": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    ]
+  },
+  "migrate": null,
+  "sudo": null,
+  "responses": {
+    "get_claimable_amount": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Uint128",
+      "description": "A thin wrapper around u128 that is using strings for JSON encoding/decoding, such that the full u128 range can be used for clients that convert JSON numbers to floats, like JavaScript and jq.\n\n# Examples\n\nUse `from` to create instances of this and `u128` to get the value out:\n\n``` # use cosmwasm_std::Uint128; let a = Uint128::from(123u128); assert_eq!(a.u128(), 123);\n\nlet b = Uint128::from(42u64); assert_eq!(b.u128(), 42);\n\nlet c = Uint128::from(70u32); assert_eq!(c.u128(), 70); ```",
+      "type": "string"
+    },
+    "get_claimable_time": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "TimeInfo",
+      "type": "object",
+      "required": [
+        "claimable_time",
+        "crr_time"
+      ],
+      "properties": {
+        "claimable_time": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "crr_time": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      },
+      "additionalProperties": false
+    },
+    "get_sale_info": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "SaleInfo",
+      "type": "object",
+      "required": [
+        "earned_amount",
+        "token_sold_amount"
+      ],
+      "properties": {
+        "earned_amount": {
+          "$ref": "#/definitions/Uint128"
+        },
+        "token_sold_amount": {
+          "$ref": "#/definitions/Uint128"
+        }
+      },
+      "additionalProperties": false,
+      "definitions": {
+        "Uint128": {
+          "description": "A thin wrapper around u128 that is using strings for JSON encoding/decoding, such that the full u128 range can be used for clients that convert JSON numbers to floats, like JavaScript and jq.\n\n# Examples\n\nUse `from` to create instances of this and `u128` to get the value out:\n\n``` # use cosmwasm_std::Uint128; let a = Uint128::from(123u128); assert_eq!(a.u128(), 123);\n\nlet b = Uint128::from(42u64); assert_eq!(b.u128(), 42);\n\nlet c = Uint128::from(70u32); assert_eq!(c.u128(), 70); ```",
+          "type": "string"
+        }
+      }
+    },
+    "get_state_info": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "State",
+      "type": "object",
+      "required": [
+        "admin",
+        "claim_start",
+        "contract_admin",
+        "ido_page",
+        "is_native",
+        "presale_period",
+        "presale_start",
+        "token_address_or_denom",
+        "token_cost",
+        "total_supply",
+        "vesting_step_period",
+        "withdrawn_not_sold"
+      ],
+      "properties": {
+        "admin": {
+          "type": "string"
+        },
+        "claim_start": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "contract_admin": {
+          "type": "string"
+        },
+        "ido_page": {
+          "$ref": "#/definitions/IdoInfo"
+        },
+        "is_native": {
+          "type": "boolean"
+        },
+        "presale_period": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "presale_start": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "token_address_or_denom": {
+          "type": "string"
+        },
+        "token_cost": {
+          "$ref": "#/definitions/Coin"
+        },
+        "total_supply": {
+          "$ref": "#/definitions/Uint128"
+        },
+        "vesting_step_period": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "withdrawn_not_sold": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "definitions": {
+        "Coin": {
+          "type": "object",
+          "required": [
+            "amount",
+            "denom"
+          ],
+          "properties": {
+            "amount": {
+              "$ref": "#/definitions/Uint128"
+            },
+            "denom": {
+              "type": "string"
+            }
+          }
+        },
+        "Description": {
+          "type": "object",
+          "required": [
+            "desc",
+            "header"
+          ],
+          "properties": {
+            "desc": {
+              "type": "string"
+            },
+            "header": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "IdoInfo": {
+          "type": "object",
+          "required": [
+            "problem",
+            "product",
+            "solution",
+            "team"
+          ],
+          "properties": {
+            "problem": {
+              "$ref": "#/definitions/Description"
+            },
+            "product": {
+              "$ref": "#/definitions/Product"
+            },
+            "socials": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/Socials"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "solution": {
+              "$ref": "#/definitions/Description"
+            },
+            "team": {
+              "$ref": "#/definitions/Team"
+            },
+            "website": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "whitepaper": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "Product": {
+          "type": "object",
+          "required": [
+            "banner_images",
+            "full_name",
+            "header",
+            "highlights",
+            "logo",
+            "long_desc",
+            "short_desc",
+            "token_symbol"
+          ],
+          "properties": {
+            "banner_images": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "full_name": {
+              "type": "string"
+            },
+            "header": {
+              "type": "string"
+            },
+            "highlights": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "logo": {
+              "type": "string"
+            },
+            "long_desc": {
+              "type": "string"
+            },
+            "short_desc": {
+              "type": "string"
+            },
+            "token_symbol": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Socials": {
+          "type": "object",
+          "required": [
+            "discord",
+            "telegram",
+            "twitter"
+          ],
+          "properties": {
+            "discord": {
+              "type": "string"
+            },
+            "telegram": {
+              "type": "string"
+            },
+            "twitter": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Team": {
+          "type": "object",
+          "required": [
+            "header",
+            "members"
+          ],
+          "properties": {
+            "header": {
+              "type": "string"
+            },
+            "members": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TeamMember"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "TeamMember": {
+          "type": "object",
+          "required": [
+            "member_desc",
+            "member_name",
+            "member_role"
+          ],
+          "properties": {
+            "member_desc": {
+              "type": "string"
+            },
+            "member_name": {
+              "type": "string"
+            },
+            "member_role": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Uint128": {
+          "description": "A thin wrapper around u128 that is using strings for JSON encoding/decoding, such that the full u128 range can be used for clients that convert JSON numbers to floats, like JavaScript and jq.\n\n# Examples\n\nUse `from` to create instances of this and `u128` to get the value out:\n\n``` # use cosmwasm_std::Uint128; let a = Uint128::from(123u128); assert_eq!(a.u128(), 123);\n\nlet b = Uint128::from(42u64); assert_eq!(b.u128(), 42);\n\nlet c = Uint128::from(70u32); assert_eq!(c.u128(), 70); ```",
+          "type": "string"
+        }
+      }
+    },
+    "get_user_info": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserInfoResponse",
+      "type": "object",
+      "required": [
+        "user_info"
+      ],
+      "properties": {
+        "user_info": {
+          "$ref": "#/definitions/UserInfo"
+        }
+      },
+      "additionalProperties": false,
+      "definitions": {
+        "Uint128": {
+          "description": "A thin wrapper around u128 that is using strings for JSON encoding/decoding, such that the full u128 range can be used for clients that convert JSON numbers to floats, like JavaScript and jq.\n\n# Examples\n\nUse `from` to create instances of this and `u128` to get the value out:\n\n``` # use cosmwasm_std::Uint128; let a = Uint128::from(123u128); assert_eq!(a.u128(), 123);\n\nlet b = Uint128::from(42u64); assert_eq!(b.u128(), 42);\n\nlet c = Uint128::from(70u32); assert_eq!(c.u128(), 70); ```",
+          "type": "string"
+        },
+        "UserInfo": {
+          "type": "object",
+          "required": [
+            "address",
+            "claimed_amount",
+            "last_received",
+            "sent_amount",
+            "total_claim_amount",
+            "vesting_step"
+          ],
+          "properties": {
+            "address": {
+              "type": "string"
+            },
+            "claimed_amount": {
+              "$ref": "#/definitions/Uint128"
+            },
+            "last_received": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "sent_amount": {
+              "$ref": "#/definitions/Uint128"
+            },
+            "total_claim_amount": {
+              "$ref": "#/definitions/Uint128"
+            },
+            "vesting_step": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "get_user_infos": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserInfosResponse",
+      "type": "object",
+      "required": [
+        "user_info"
+      ],
+      "properties": {
+        "user_info": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UserInfo"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "definitions": {
+        "Uint128": {
+          "description": "A thin wrapper around u128 that is using strings for JSON encoding/decoding, such that the full u128 range can be used for clients that convert JSON numbers to floats, like JavaScript and jq.\n\n# Examples\n\nUse `from` to create instances of this and `u128` to get the value out:\n\n``` # use cosmwasm_std::Uint128; let a = Uint128::from(123u128); assert_eq!(a.u128(), 123);\n\nlet b = Uint128::from(42u64); assert_eq!(b.u128(), 42);\n\nlet c = Uint128::from(70u32); assert_eq!(c.u128(), 70); ```",
+          "type": "string"
+        },
+        "UserInfo": {
+          "type": "object",
+          "required": [
+            "address",
+            "claimed_amount",
+            "last_received",
+            "sent_amount",
+            "total_claim_amount",
+            "vesting_step"
+          ],
+          "properties": {
+            "address": {
+              "type": "string"
+            },
+            "claimed_amount": {
+              "$ref": "#/definitions/Uint128"
+            },
+            "last_received": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            },
+            "sent_amount": {
+              "$ref": "#/definitions/Uint128"
+            },
+            "total_claim_amount": {
+              "$ref": "#/definitions/Uint128"
+            },
+            "vesting_step": {
+              "type": "integer",
+              "format": "uint64",
+              "minimum": 0.0
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,10 @@ const contracts = [
   {
     name: 'FuzioNativePrediction',
     dir: join(contractsDir, 'fuzio-prediction')
+  },
+  {
+    name: 'FuzioNativeIDO',
+    dir: join(contractsDir, 'fuzio-ido')
   }
 ];
 
