@@ -100,10 +100,14 @@ export interface SaleInfo {
   earned_amount: Uint128;
   token_sold_amount: Uint128;
 }
+export type Addr = string;
+export type Decimal = string;
 export interface State {
   admin: string;
   claim_start: number;
   contract_admin: string;
+  dev_wallet_list: WalletInfo[];
+  fee: Uint128;
   ido_page: IdoInfo;
   is_native: boolean;
   presale_period: number;
@@ -113,6 +117,10 @@ export interface State {
   total_supply: Uint128;
   vesting_step_period: number;
   withdrawn_not_sold: boolean;
+}
+export interface WalletInfo {
+  address: Addr;
+  ratio: Decimal;
 }
 export interface UserInfoResponse {
   user_info: UserInfo;

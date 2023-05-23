@@ -10,6 +10,10 @@ const contracts = [
   {
     name: 'FuzioNativeIDO',
     dir: join(contractsDir, 'fuzio-ido')
+  },
+  {
+    name: 'FuzioIDOInfo',
+    dir: join(contractsDir, 'fuzio-ido-info')
   }
 ];
 

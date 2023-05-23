@@ -6,7 +6,7 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { StdFee } from "@cosmjs/amino";
-import { Uint128, InstantiateMsg, IdoInfo, Description, Product, Socials, Team, TeamMember, Coin, ExecuteMsg, QueryMsg, TimeInfo, SaleInfo, State, UserInfoResponse, UserInfo, UserInfosResponse } from "./FuzioNativeIDO.types";
+import { Uint128, InstantiateMsg, IdoInfo, Description, Product, Socials, Team, TeamMember, Coin, ExecuteMsg, QueryMsg, TimeInfo, SaleInfo, Addr, Decimal, State, WalletInfo, UserInfoResponse, UserInfo, UserInfosResponse } from "./FuzioNativeIDO.types";
 export interface FuzioNativeIDOReadOnlyInterface {
   contractAddress: string;
   getStateInfo: () => Promise<State>;

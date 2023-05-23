@@ -10,6 +10,9 @@ import * as _2 from "./FuzioNativePrediction.message-composer";
 import * as _3 from "./FuzioNativeIDO.types";
 import * as _4 from "./FuzioNativeIDO.client";
 import * as _5 from "./FuzioNativeIDO.message-composer";
+import * as _6 from "./FuzioIDOInfo.types";
+import * as _7 from "./FuzioIDOInfo.client";
+import * as _8 from "./FuzioIDOInfo.message-composer";
 export namespace contracts {
   export const FuzioNativePrediction = { ..._0,
     ..._1,
@@ -18,5 +21,9 @@ export namespace contracts {
   export const FuzioNativeIDO = { ..._3,
     ..._4,
     ..._5
+  };
+  export const FuzioIDOInfo = { ..._6,
+    ..._7,
+    ..._8
   };
 }

@@ -7,6 +7,8 @@ import * as _1 from "./FuzioNativePrediction.client";
 import * as _2 from "./FuzioNativePrediction.message-composer";
 import * as _4 from "./FuzioNativeIDO.client";
 import * as _5 from "./FuzioNativeIDO.message-composer";
+import * as _7 from "./FuzioIDOInfo.client";
+import * as _8 from "./FuzioIDOInfo.message-composer";
 export declare namespace contracts {
     const FuzioNativePrediction: {
         FuzioNativePredictionMessageComposer: typeof _2.FuzioNativePredictionMessageComposer;
@@ -17,5 +19,10 @@ export declare namespace contracts {
         FuzioNativeIDOMessageComposer: typeof _5.FuzioNativeIDOMessageComposer;
         FuzioNativeIDOQueryClient: typeof _4.FuzioNativeIDOQueryClient;
         FuzioNativeIDOClient: typeof _4.FuzioNativeIDOClient;
+    };
+    const FuzioIDOInfo: {
+        FuzioIDOInfoMessageComposer: typeof _8.FuzioIDOInfoMessageComposer;
+        FuzioIDOInfoQueryClient: typeof _7.FuzioIDOInfoQueryClient;
+        FuzioIDOInfoClient: typeof _7.FuzioIDOInfoClient;
     };
 }

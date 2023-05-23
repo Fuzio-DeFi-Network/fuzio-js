@@ -7,7 +7,7 @@
 import { MsgExecuteContractEncodeObject } from "cosmwasm";
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@cosmjs/encoding";
-import { Uint128, InstantiateMsg, IdoInfo, Description, Product, Socials, Team, TeamMember, Coin, ExecuteMsg, QueryMsg, TimeInfo, SaleInfo, State, UserInfoResponse, UserInfo, UserInfosResponse } from "./FuzioNativeIDO.types";
+import { Uint128, InstantiateMsg, IdoInfo, Description, Product, Socials, Team, TeamMember, Coin, ExecuteMsg, QueryMsg, TimeInfo, SaleInfo, Addr, Decimal, State, WalletInfo, UserInfoResponse, UserInfo, UserInfosResponse } from "./FuzioNativeIDO.types";
 export interface FuzioNativeIDOMessage {
   contractAddress: string;
   sender: string;
