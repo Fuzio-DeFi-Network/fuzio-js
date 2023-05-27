@@ -9,6 +9,12 @@ import * as _4 from "./FuzioNativeIDO.client";
 import * as _5 from "./FuzioNativeIDO.message-composer";
 import * as _7 from "./FuzioIDOInfo.client";
 import * as _8 from "./FuzioIDOInfo.message-composer";
+import * as _10 from "./FuzioPool.client";
+import * as _11 from "./FuzioPool.message-composer";
+import * as _13 from "./FuzioPoolList.client";
+import * as _14 from "./FuzioPoolList.message-composer";
+import * as _16 from "./FuzioStaking.client";
+import * as _17 from "./FuzioStaking.message-composer";
 export declare namespace contracts {
     const FuzioNativePrediction: {
         FuzioNativePredictionMessageComposer: typeof _2.FuzioNativePredictionMessageComposer;
@@ -24,5 +30,20 @@ export declare namespace contracts {
         FuzioIDOInfoMessageComposer: typeof _8.FuzioIDOInfoMessageComposer;
         FuzioIDOInfoQueryClient: typeof _7.FuzioIDOInfoQueryClient;
         FuzioIDOInfoClient: typeof _7.FuzioIDOInfoClient;
+    };
+    const FuzioPool: {
+        FuzioPoolMessageComposer: typeof _11.FuzioPoolMessageComposer;
+        FuzioPoolQueryClient: typeof _10.FuzioPoolQueryClient;
+        FuzioPoolClient: typeof _10.FuzioPoolClient;
+    };
+    const FuzioPoolList: {
+        FuzioPoolListMessageComposer: typeof _14.FuzioPoolListMessageComposer;
+        FuzioPoolListQueryClient: typeof _13.FuzioPoolListQueryClient;
+        FuzioPoolListClient: typeof _13.FuzioPoolListClient;
+    };
+    const FuzioStaking: {
+        FuzioStakingMessageComposer: typeof _17.FuzioStakingMessageComposer;
+        FuzioStakingQueryClient: typeof _16.FuzioStakingQueryClient;
+        FuzioStakingClient: typeof _16.FuzioStakingClient;
     };
 }

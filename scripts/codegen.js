@@ -14,6 +14,18 @@ const contracts = [
   {
     name: 'FuzioIDOInfo',
     dir: join(contractsDir, 'fuzio-ido-info')
+  },
+  {
+    name: 'FuzioPool',
+    dir: join(contractsDir, 'fuzio-pool')
+  },
+  {
+    name: 'FuzioPoolList',
+    dir: join(contractsDir, 'fuzio-pool-list')
+  },
+  {
+    name: 'FuzioStaking',
+    dir: join(contractsDir, 'fuzio-staking')
   }
 ];
 

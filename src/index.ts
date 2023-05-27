@@ -13,6 +13,15 @@ import * as _5 from "./FuzioNativeIDO.message-composer";
 import * as _6 from "./FuzioIDOInfo.types";
 import * as _7 from "./FuzioIDOInfo.client";
 import * as _8 from "./FuzioIDOInfo.message-composer";
+import * as _9 from "./FuzioPool.types";
+import * as _10 from "./FuzioPool.client";
+import * as _11 from "./FuzioPool.message-composer";
+import * as _12 from "./FuzioPoolList.types";
+import * as _13 from "./FuzioPoolList.client";
+import * as _14 from "./FuzioPoolList.message-composer";
+import * as _15 from "./FuzioStaking.types";
+import * as _16 from "./FuzioStaking.client";
+import * as _17 from "./FuzioStaking.message-composer";
 export namespace contracts {
   export const FuzioNativePrediction = { ..._0,
     ..._1,
@@ -25,5 +34,17 @@ export namespace contracts {
   export const FuzioIDOInfo = { ..._6,
     ..._7,
     ..._8
+  };
+  export const FuzioPool = { ..._9,
+    ..._10,
+    ..._11
+  };
+  export const FuzioPoolList = { ..._12,
+    ..._13,
+    ..._14
+  };
+  export const FuzioStaking = { ..._15,
+    ..._16,
+    ..._17
   };
 }
