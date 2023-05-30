@@ -16,7 +16,7 @@ const signer = await DirectSecp256k1HdWallet.fromMnemonic(process.env.MNEMONIC ?
 const signerAccount = await signer.getAccounts()
 
 const signingCosmwasmClient = await SigningCosmWasmClient.connectWithSigner(
-	"https://sei-testnet-rpc.orbitalcommand.io/",
+	"https://sei.kingnodes.com",
 	signer,
 	{ gasPrice: new GasPrice(Decimal.fromAtomics("25000", 6), "usei") }
 )
