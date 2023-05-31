@@ -28,7 +28,7 @@ const {
 const client = new FuzioNativePredictionClient(
 	signingCosmwasmClient,
 	signerAccount[0].address,
-	"sei10d5tqsckz4mcr66wupswkscgf8ud3yyq5fla3lrxz4c98kqwnpqqvemd3w"
+	"sei14n07r30dhcxnym2p2mahcd9my2nqfeq55a0jwdpph59cgumhhj4smp4974"
 )
 
 const app = new Elysia()
