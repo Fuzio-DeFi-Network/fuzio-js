@@ -6,7 +6,7 @@
 
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { Addr, Decimal, Uint128, InstantiateMsg, Config, WalletInfo, ExecuteMsg, QueryMsg, MigrateMsg, Timestamp, Uint64, Direction, FinishedRound, AdminsResponse, ClaimInfoResponse, ClaimInfo, RoundUsersResponse, BetInfo, MyCurrentPositionResponse, MyGameResponse, PendingRewardResponse, StatusResponse, NextRound, LiveRound } from "./FuzioNativePrediction.types";
+import { Addr, Decimal, Uint128, InstantiateMsg, Config, WalletInfo, ExecuteMsg, QueryMsg, MigrateMsg, Timestamp, Uint64, Direction, FinishedRound, AdminsResponse, ClaimInfoResponse, ClaimInfo, RoundUsersResponse, BetInfo, MyCurrentPositionResponse, MyGameResponse, PendingRewardResponse, PendingRewardRoundsResponse, StatusResponse, NextRound, LiveRound, TotalSpentResponse } from "./FuzioNativePrediction.types";
 export interface FuzioNativePredictionReadOnlyInterface {
   contractAddress: string;
   config: () => Promise<Config>;
@@ -35,6 +35,11 @@ export interface FuzioNativePredictionReadOnlyInterface {
   }: {
     player: Addr;
   }) => Promise<PendingRewardResponse>;
+  myPendingRewardRounds: ({
+    player
+  }: {
+    player: Addr;
+  }) => Promise<PendingRewardRoundsResponse>;
   getUsersPerRound: ({
     limit,
     roundId,
@@ -69,6 +74,11 @@ export interface FuzioNativePredictionReadOnlyInterface {
     player: Addr;
     startAfter?: Uint128;
   }) => Promise<ClaimInfoResponse>;
+  totalSpent: ({
+    player
+  }: {
+    player: Addr;
+  }) => Promise<TotalSpentResponse>;
   getAdmins: () => Promise<AdminsResponse>;
 }
 export class FuzioNativePredictionQueryClient implements FuzioNativePredictionReadOnlyInterface {
@@ -84,10 +94,12 @@ export class FuzioNativePredictionQueryClient implements FuzioNativePredictionRe
     this.finishedRound = this.finishedRound.bind(this);
     this.myGameList = this.myGameList.bind(this);
     this.myPendingReward = this.myPendingReward.bind(this);
+    this.myPendingRewardRounds = this.myPendingRewardRounds.bind(this);
     this.getUsersPerRound = this.getUsersPerRound.bind(this);
     this.myPendingRewardRound = this.myPendingRewardRound.bind(this);
     this.getClaimInfoPerRound = this.getClaimInfoPerRound.bind(this);
     this.getClaimInfoByUser = this.getClaimInfoByUser.bind(this);
+    this.totalSpent = this.totalSpent.bind(this);
     this.getAdmins = this.getAdmins.bind(this);
   }
 
@@ -147,6 +159,17 @@ export class FuzioNativePredictionQueryClient implements FuzioNativePredictionRe
   }): Promise<PendingRewardResponse> => {
     return this.client.queryContractSmart(this.contractAddress, {
       my_pending_reward: {
+        player
+      }
+    });
+  };
+  myPendingRewardRounds = async ({
+    player
+  }: {
+    player: Addr;
+  }): Promise<PendingRewardRoundsResponse> => {
+    return this.client.queryContractSmart(this.contractAddress, {
+      my_pending_reward_rounds: {
         player
       }
     });
@@ -213,6 +236,17 @@ export class FuzioNativePredictionQueryClient implements FuzioNativePredictionRe
         limit,
         player,
         start_after: startAfter
+      }
+    });
+  };
+  totalSpent = async ({
+    player
+  }: {
+    player: Addr;
+  }): Promise<TotalSpentResponse> => {
+    return this.client.queryContractSmart(this.contractAddress, {
+      total_spent: {
+        player
       }
     });
   };

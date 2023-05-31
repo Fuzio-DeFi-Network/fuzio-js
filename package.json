@@ -1,6 +1,6 @@
 {
 	"name": "@fuzio/contracts",
-	"version": "0.4.0",
+	"version": "0.6.0",
 	"description": "Fuzio Typescript Library",
 	"author": "Marius Modlich <marius@digitalkitchen.zone>",
 	"repository": "https://github.com/Fuzio-DeFi-Network/fuzio-types",

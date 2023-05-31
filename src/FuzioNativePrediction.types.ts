@@ -84,6 +84,10 @@ export type QueryMsg = {
     player: Addr;
   };
 } | {
+  my_pending_reward_rounds: {
+    player: Addr;
+  };
+} | {
   get_users_per_round: {
     limit?: number | null;
     round_id: Uint128;
@@ -105,6 +109,10 @@ export type QueryMsg = {
     limit?: number | null;
     player: Addr;
     start_after?: Uint128 | null;
+  };
+} | {
+  total_spent: {
+    player: Addr;
   };
 } | {
   get_admins: {};
@@ -156,6 +164,10 @@ export interface MyGameResponse {
 export interface PendingRewardResponse {
   pending_reward: Uint128;
 }
+export interface PendingRewardRoundsResponse {
+  pending_reward_rounds: [Uint128, Uint128][];
+  pending_reward_total: Uint128;
+}
 export interface StatusResponse {
   bidding_round?: NextRound | null;
   current_time: Timestamp;
@@ -177,5 +189,8 @@ export interface LiveRound {
   id: Uint128;
   open_price: Decimal;
   open_time: Timestamp;
+}
+export interface TotalSpentResponse {
+  total_spent: Uint128;
 }
 export type FuzioNativePredictionExecuteMsg = ExecuteMsg;

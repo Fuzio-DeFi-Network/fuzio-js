@@ -8,7 +8,7 @@ import { Coin } from "@cosmjs/amino";
 import { MsgExecuteContractEncodeObject } from "cosmwasm";
 import { MsgExecuteContract } from "cosmjs-types/cosmwasm/wasm/v1/tx";
 import { toUtf8 } from "@cosmjs/encoding";
-import { Addr, Decimal, Uint128, InstantiateMsg, Config, WalletInfo, ExecuteMsg, QueryMsg, MigrateMsg, Timestamp, Uint64, Direction, FinishedRound, AdminsResponse, ClaimInfoResponse, ClaimInfo, RoundUsersResponse, BetInfo, MyCurrentPositionResponse, MyGameResponse, PendingRewardResponse, StatusResponse, NextRound, LiveRound } from "./FuzioNativePrediction.types";
+import { Addr, Decimal, Uint128, InstantiateMsg, Config, WalletInfo, ExecuteMsg, QueryMsg, MigrateMsg, Timestamp, Uint64, Direction, FinishedRound, AdminsResponse, ClaimInfoResponse, ClaimInfo, RoundUsersResponse, BetInfo, MyCurrentPositionResponse, MyGameResponse, PendingRewardResponse, PendingRewardRoundsResponse, StatusResponse, NextRound, LiveRound, TotalSpentResponse } from "./FuzioNativePrediction.types";
 export interface FuzioNativePredictionMessage {
   contractAddress: string;
   sender: string;

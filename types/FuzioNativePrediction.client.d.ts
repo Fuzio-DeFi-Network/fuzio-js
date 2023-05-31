@@ -5,7 +5,7 @@
 */
 import { CosmWasmClient, SigningCosmWasmClient, ExecuteResult } from "@cosmjs/cosmwasm-stargate";
 import { Coin, StdFee } from "@cosmjs/amino";
-import { Addr, Uint128, Config, WalletInfo, FinishedRound, AdminsResponse, ClaimInfoResponse, RoundUsersResponse, MyCurrentPositionResponse, MyGameResponse, PendingRewardResponse, StatusResponse } from "./FuzioNativePrediction.types";
+import { Addr, Uint128, Config, WalletInfo, FinishedRound, AdminsResponse, ClaimInfoResponse, RoundUsersResponse, MyCurrentPositionResponse, MyGameResponse, PendingRewardResponse, PendingRewardRoundsResponse, StatusResponse, TotalSpentResponse } from "./FuzioNativePrediction.types";
 export interface FuzioNativePredictionReadOnlyInterface {
     contractAddress: string;
     config: () => Promise<Config>;
@@ -24,6 +24,9 @@ export interface FuzioNativePredictionReadOnlyInterface {
     myPendingReward: ({ player }: {
         player: Addr;
     }) => Promise<PendingRewardResponse>;
+    myPendingRewardRounds: ({ player }: {
+        player: Addr;
+    }) => Promise<PendingRewardRoundsResponse>;
     getUsersPerRound: ({ limit, roundId, startAfter }: {
         limit?: number;
         roundId: Uint128;
@@ -43,6 +46,9 @@ export interface FuzioNativePredictionReadOnlyInterface {
         player: Addr;
         startAfter?: Uint128;
     }) => Promise<ClaimInfoResponse>;
+    totalSpent: ({ player }: {
+        player: Addr;
+    }) => Promise<TotalSpentResponse>;
     getAdmins: () => Promise<AdminsResponse>;
 }
 export declare class FuzioNativePredictionQueryClient implements FuzioNativePredictionReadOnlyInterface {
@@ -65,6 +71,9 @@ export declare class FuzioNativePredictionQueryClient implements FuzioNativePred
     myPendingReward: ({ player }: {
         player: Addr;
     }) => Promise<PendingRewardResponse>;
+    myPendingRewardRounds: ({ player }: {
+        player: Addr;
+    }) => Promise<PendingRewardRoundsResponse>;
     getUsersPerRound: ({ limit, roundId, startAfter }: {
         limit?: number;
         roundId: Uint128;
@@ -84,6 +93,9 @@ export declare class FuzioNativePredictionQueryClient implements FuzioNativePred
         player: Addr;
         startAfter?: Uint128;
     }) => Promise<ClaimInfoResponse>;
+    totalSpent: ({ player }: {
+        player: Addr;
+    }) => Promise<TotalSpentResponse>;
     getAdmins: () => Promise<AdminsResponse>;
 }
 export interface FuzioNativePredictionInterface extends FuzioNativePredictionReadOnlyInterface {
