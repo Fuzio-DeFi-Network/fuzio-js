@@ -28,7 +28,7 @@ const {
 const client = new FuzioNativePredictionClient(
 	signingCosmwasmClient,
 	signerAccount[0].address,
-	"sei1rzcalhgvcljxxsdhqkpr04437edr3fz6vlhpvlgh7sdzuh9px9rs60l060"
+	"sei10d5tqsckz4mcr66wupswkscgf8ud3yyq5fla3lrxz4c98kqwnpqqvemd3w"
 )
 
 const app = new Elysia()
@@ -55,7 +55,19 @@ const app = new Elysia()
                 '---'
 `
 	)
-	.use(swagger())
+	.get("/status", async () => await getStatus(client))
+	.use(
+		swagger({
+			documentation: {
+				info: {
+					title: "Fuzio Prediction Service",
+					version: "1.0.0",
+					description: "API Routes for the Fuzio Prediction game",
+					contact: { name: "Telegram", url: "https://fuzio.network/social/telegram" }
+				}
+			}
+		})
+	)
 	.use(
 		cron({
 			name: "Close Round",

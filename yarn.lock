@@ -601,6 +601,11 @@ croner@^6.0.3:
   resolved "https://registry.yarnpkg.com/croner/-/croner-6.0.3.tgz#8047aeeb8715c85b1c41cba23e48ca3fdcb36b3f"
   integrity sha512-Go+s9AaI+MeZUDJ6Kp7OYXCbM3svJ0qZ3IpkGoPetZLnP5wpX8MBTEiJOTYDFokP0Ph85GFZEUTBL9fo1e4DtQ==
 
+dayjs@^1.11.7:
+  version "1.11.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
+  integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
+
 decamelize@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
