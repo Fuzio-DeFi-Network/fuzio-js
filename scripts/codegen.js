@@ -40,13 +40,17 @@ codegen({
     },
     types: {
       enabled: true,
-      aliasExecuteMsg: true
+      aliasExecuteMsg: true,
+      aliasEntryPoints: true
     },
     client: {
       enabled: true,
-      execExtendsQuery: true
+      execExtendsQuery: false
     },
     messageComposer: {
+      enabled: true
+    },
+    msgBuilder: {
       enabled: true
     }
   }

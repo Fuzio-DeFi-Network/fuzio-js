@@ -1,5 +1,5 @@
 {
-	"contract_name": "fuzio_option_trading",
+	"contract_name": "fuzio_prediction_game",
 	"contract_version": "1.0.0",
 	"idl_version": "1.0.0",
 	"instantiate": {
