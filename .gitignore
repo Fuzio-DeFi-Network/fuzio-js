@@ -2,18 +2,13 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
-
 # production
 /build
+/main
 
 # misc
 .DS_Store
@@ -25,6 +20,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+.env
 .env.local
 .env.development.local
 .env.test.local
@@ -33,6 +29,7 @@ yarn-error.log*
 # vercel
 .vercel
 
+# bun
 **/*.trace
 **/*.zip
 **/*.tar.gz
@@ -41,4 +38,5 @@ yarn-error.log*
 package-lock.json
 **/*.bun
 
-.env
+# ide
+/.vscode

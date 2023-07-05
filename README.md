@@ -1,15 +1,36 @@
-# Elysia with Bun runtime
+# @fuzio/contracts
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
+```sh
+npm install @fuzio/contracts
+yarn add @fuzio/contracts
+pnpm install @fuzio/contracts
 ```
 
-## Development
-To start the development server run:
-```bash
-bun run dev
+## Fuzio Network TypeScript Bundle
+
+### Clients
+
+All contracts are scoped under the `contracts` object:
+
+```js
+import { contracts } from "@fuzio/contracts"
+const { FuzioNativePrediction } = contracts
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+Then each contract will have clients, for example for `FuzioNativePrediction`:
+
+```ts
+const {
+ FuzioNativePredictionClient,
+ FuzioNativePredictionMessageComposer,
+ FuzioNativePredictionQueryClient
+} = FuzioNativePrediction
+```
+
+## Credits
+
+🛠 Built by [Digital Kitchen](https://digitalkitchen.zone/stake), based on [Cosmology ⚛️](https://cosmology.tech/validator) goodness!
+
+Using CosmWasm TS Codegen:
+
+-  [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) for generated CosmWasm contract Typescript classes
