@@ -1,0 +1,6 @@
+{
+  "src/**/*.{js,ts}": [
+    "eslint --fix --no-error-on-unmatched-pattern"
+  ],
+  "src/**/*.{json,md}": ["eslint --fix --no-error-on-unmatched-pattern"]
+}

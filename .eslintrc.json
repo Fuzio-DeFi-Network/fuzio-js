@@ -1,0 +1,38 @@
+{
+  	"extends": [
+    	"plugin:canonical/recommended", "canonical", "canonical/auto",
+		"canonical/typescript", "canonical/json", "canonical/node",
+		"canonical/module", "canonical/typescript-type-checking", "canonical/prettier"
+	],
+  	"plugins": [
+    	"canonical"
+  	],
+	"rules": {
+		"prettier/prettier": [
+    		"error",
+   			{
+      			"singleQuote": false,
+				"semi": false,
+				"useTabs": true,
+				"trailingComma": "none"
+    		}
+		],
+		"sort-imports": [
+        "error",
+        {
+          "ignoreCase": false,
+          "ignoreDeclarationSort": true, // don't want to sort import lines, use eslint-plugin-import instead
+          "ignoreMemberSort": false,
+          "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+          "allowSeparatedGroups": true
+        }
+      ],
+	  "node/no-process-env": "off",
+	  "import/extensions": "off",
+	  "no-warning-comments": "off"
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	}
+}

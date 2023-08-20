@@ -1,64 +1,80 @@
-import { join, resolve } from 'path';
-import codegen from '@cosmwasm/ts-codegen';
+import codegen from "@cosmwasm/ts-codegen"
+import { join, resolve } from "node:path"
 
-const contractsDir = resolve(join(__dirname, '../contracts'));
+// eslint-disable-next-line unicorn/prefer-module
+const contractsDirectory = resolve(join(__dirname, "../contracts"))
 const contracts = [
-  {
-    name: 'FuzioNativePrediction',
-    dir: join(contractsDir, 'fuzio-prediction')
-  },
-  {
-    name: 'FuzioNativeIDO',
-    dir: join(contractsDir, 'fuzio-ido')
-  },
-  {
-    name: 'FuzioIDOInfo',
-    dir: join(contractsDir, 'fuzio-ido-info')
-  },
-  {
-    name: 'FuzioPool',
-    dir: join(contractsDir, 'fuzio-pool')
-  },
-  {
-    name: 'FuzioPoolList',
-    dir: join(contractsDir, 'fuzio-pool-list')
-  },
-  {
-    name: 'FuzioStaking',
-    dir: join(contractsDir, 'fuzio-staking')
-  }
-];
+	{
+		dir: join(contractsDirectory, "fuzio-prediction"),
+		name: "FuzioNativePrediction"
+	},
+	{
+		dir: join(contractsDirectory, "fuzio-ido"),
+		name: "FuzioNativeIDO"
+	},
+	{
+		dir: join(contractsDirectory, "fuzio-ido-info"),
+		name: "FuzioIDOInfo"
+	},
+	{
+		dir: join(contractsDirectory, "fuzio-pool"),
+		name: "FuzioPool"
+	},
+	{
+		dir: join(contractsDirectory, "fuzio-pool-list"),
+		name: "FuzioPoolList"
+	},
+	{
+		dir: join(contractsDirectory, "fuzio-staking"),
+		name: "FuzioStaking"
+	},
+	{
+		dir: join(contractsDirectory, "cw20-base"),
+		name: "CW20"
+	}
+]
 
 codegen({
-  contracts,
-  outPath: join(__dirname, '../src'),
-  options: {
-    bundle: {
-      enabled: true,
-      bundleFile: 'index.ts',
-      scope: 'contracts'
-    },
-    types: {
-      enabled: true,
-      aliasExecuteMsg: true,
-      aliasEntryPoints: true
-    },
-    client: {
-      enabled: true,
-      execExtendsQuery: false
-    },
-    messageComposer: {
-      enabled: true
-    },
-    msgBuilder: {
-      enabled: true
-    }
-  }
+	contracts,
+	options: {
+		bundle: {
+			bundleFile: "index.ts",
+			enabled: true,
+			scope: "contracts"
+		},
+		client: {
+			enabled: true,
+			execExtendsQuery: false
+		},
+		messageBuilder: {
+			enabled: true
+		},
+		messageComposer: {
+			enabled: true
+		},
+		reactQuery: {
+			camelize: true,
+			enabled: true,
+			mutations: true,
+			queryFactory: true,
+			queryKeys: true,
+			version: "v4"
+		},
+		types: {
+			aliasEntryPoints: true,
+			aliasExecuteMsg: true,
+			enabled: true
+		}
+	},
+	// eslint-disable-next-line unicorn/prefer-module
+	outPath: join(__dirname, "../src")
 })
-  .then(() => {
-    console.log('✨ Generated Fuzio types package!');
-  })
-  .catch((e) => {
-    console.error(e);
-    process.exit(1);
-  });
+	.then(() => {
+		// eslint-disable-next-line no-console
+		console.log("✨ Generated Fuzio types package!")
+	})
+	.catch((error) => {
+		// eslint-disable-next-line no-console
+		console.error(error)
+		throw new Error(error)
+	})
