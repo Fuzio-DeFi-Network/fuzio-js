@@ -7,79 +7,65 @@
 import * as _0 from "./FuzioNativePrediction.types";
 import * as _1 from "./FuzioNativePrediction.client";
 import * as _2 from "./FuzioNativePrediction.message-composer";
-import * as _3 from "./FuzioNativePrediction.react-query";
-import * as _4 from "./FuzioNativePrediction.message-builder";
-import * as _5 from "./FuzioNativeIDO.types";
-import * as _6 from "./FuzioNativeIDO.client";
-import * as _7 from "./FuzioNativeIDO.message-composer";
-import * as _8 from "./FuzioNativeIDO.react-query";
-import * as _9 from "./FuzioNativeIDO.message-builder";
-import * as _10 from "./FuzioIDOInfo.types";
-import * as _11 from "./FuzioIDOInfo.client";
-import * as _12 from "./FuzioIDOInfo.message-composer";
-import * as _13 from "./FuzioIDOInfo.react-query";
-import * as _14 from "./FuzioIDOInfo.message-builder";
-import * as _15 from "./FuzioPool.types";
-import * as _16 from "./FuzioPool.client";
-import * as _17 from "./FuzioPool.message-composer";
-import * as _18 from "./FuzioPool.react-query";
-import * as _19 from "./FuzioPool.message-builder";
-import * as _20 from "./FuzioPoolList.types";
-import * as _21 from "./FuzioPoolList.client";
-import * as _22 from "./FuzioPoolList.message-composer";
-import * as _23 from "./FuzioPoolList.react-query";
-import * as _24 from "./FuzioPoolList.message-builder";
-import * as _25 from "./FuzioStaking.types";
-import * as _26 from "./FuzioStaking.client";
-import * as _27 from "./FuzioStaking.message-composer";
-import * as _28 from "./FuzioStaking.react-query";
-import * as _29 from "./FuzioStaking.message-builder";
-import * as _30 from "./Cw20.types";
-import * as _31 from "./Cw20.client";
-import * as _32 from "./Cw20.message-composer";
-import * as _33 from "./Cw20.react-query";
-import * as _34 from "./Cw20.message-builder";
+import * as _3 from "./FuzioNativePrediction.message-builder";
+import * as _4 from "./FuzioNativeIDO.types";
+import * as _5 from "./FuzioNativeIDO.client";
+import * as _6 from "./FuzioNativeIDO.message-composer";
+import * as _7 from "./FuzioNativeIDO.message-builder";
+import * as _8 from "./FuzioIDOInfo.types";
+import * as _9 from "./FuzioIDOInfo.client";
+import * as _10 from "./FuzioIDOInfo.message-composer";
+import * as _11 from "./FuzioIDOInfo.message-builder";
+import * as _12 from "./FuzioPool.types";
+import * as _13 from "./FuzioPool.client";
+import * as _14 from "./FuzioPool.message-composer";
+import * as _15 from "./FuzioPool.message-builder";
+import * as _16 from "./FuzioPoolList.types";
+import * as _17 from "./FuzioPoolList.client";
+import * as _18 from "./FuzioPoolList.message-composer";
+import * as _19 from "./FuzioPoolList.message-builder";
+import * as _20 from "./FuzioStaking.types";
+import * as _21 from "./FuzioStaking.client";
+import * as _22 from "./FuzioStaking.message-composer";
+import * as _23 from "./FuzioStaking.message-builder";
+import * as _24 from "./Cw20.types";
+import * as _25 from "./Cw20.client";
+import * as _26 from "./Cw20.message-composer";
+import * as _27 from "./Cw20.message-builder";
 export namespace contracts {
   export const FuzioNativePrediction = { ..._0,
     ..._1,
     ..._2,
-    ..._3,
-    ..._4
+    ..._3
   };
-  export const FuzioNativeIDO = { ..._5,
+  export const FuzioNativeIDO = { ..._4,
+    ..._5,
     ..._6,
-    ..._7,
-    ..._8,
-    ..._9
+    ..._7
   };
-  export const FuzioIDOInfo = { ..._10,
-    ..._11,
-    ..._12,
+  export const FuzioIDOInfo = { ..._8,
+    ..._9,
+    ..._10,
+    ..._11
+  };
+  export const FuzioPool = { ..._12,
     ..._13,
-    ..._14
+    ..._14,
+    ..._15
   };
-  export const FuzioPool = { ..._15,
-    ..._16,
+  export const FuzioPoolList = { ..._16,
     ..._17,
     ..._18,
     ..._19
   };
-  export const FuzioPoolList = { ..._20,
+  export const FuzioStaking = { ..._20,
     ..._21,
     ..._22,
-    ..._23,
-    ..._24
+    ..._23
   };
-  export const FuzioStaking = { ..._25,
+  export const Cw20 = { ..._24,
+    ..._25,
     ..._26,
-    ..._27,
-    ..._28,
-    ..._29
-  };
-  export const Cw20 = { ..._30,
-    ..._31,
-    ..._32,
-    ..._33,
-    ..._34
+    ..._27
   };
 }

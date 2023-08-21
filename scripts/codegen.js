@@ -52,14 +52,6 @@ codegen({
 		messageComposer: {
 			enabled: true
 		},
-		reactQuery: {
-			camelize: true,
-			enabled: true,
-			mutations: true,
-			queryFactory: true,
-			queryKeys: true,
-			version: "v4"
-		},
 		types: {
 			aliasEntryPoints: true,
 			aliasExecuteMsg: true,
