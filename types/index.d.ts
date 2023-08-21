@@ -3,541 +3,75 @@
 * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
 * and run the @cosmwasm/ts-codegen generate command to regenerate this file.
 */
-import * as _0 from "./FuzioNativePrediction.types";
 import * as _1 from "./FuzioNativePrediction.client";
 import * as _2 from "./FuzioNativePrediction.message-composer";
-import * as _3 from "./FuzioNativePrediction.react-query";
-import * as _4 from "./FuzioNativePrediction.message-builder";
-import * as _5 from "./FuzioNativeIDO.types";
-import * as _6 from "./FuzioNativeIDO.client";
-import * as _7 from "./FuzioNativeIDO.message-composer";
-import * as _8 from "./FuzioNativeIDO.react-query";
-import * as _9 from "./FuzioNativeIDO.message-builder";
-import * as _10 from "./FuzioIDOInfo.types";
-import * as _11 from "./FuzioIDOInfo.client";
-import * as _12 from "./FuzioIDOInfo.message-composer";
-import * as _13 from "./FuzioIDOInfo.react-query";
-import * as _14 from "./FuzioIDOInfo.message-builder";
-import * as _15 from "./FuzioPool.types";
-import * as _16 from "./FuzioPool.client";
-import * as _17 from "./FuzioPool.message-composer";
-import * as _18 from "./FuzioPool.react-query";
-import * as _19 from "./FuzioPool.message-builder";
-import * as _20 from "./FuzioPoolList.types";
-import * as _21 from "./FuzioPoolList.client";
-import * as _22 from "./FuzioPoolList.message-composer";
-import * as _23 from "./FuzioPoolList.react-query";
-import * as _24 from "./FuzioPoolList.message-builder";
-import * as _25 from "./FuzioStaking.types";
-import * as _26 from "./FuzioStaking.client";
-import * as _27 from "./FuzioStaking.message-composer";
-import * as _28 from "./FuzioStaking.react-query";
-import * as _29 from "./FuzioStaking.message-builder";
-import * as _30 from "./Cw20.types";
-import * as _31 from "./Cw20.client";
-import * as _32 from "./Cw20.message-composer";
-import * as _33 from "./Cw20.react-query";
-import * as _34 from "./Cw20.message-builder";
+import * as _3 from "./FuzioNativePrediction.message-builder";
+import * as _5 from "./FuzioNativeIDO.client";
+import * as _6 from "./FuzioNativeIDO.message-composer";
+import * as _7 from "./FuzioNativeIDO.message-builder";
+import * as _9 from "./FuzioIDOInfo.client";
+import * as _10 from "./FuzioIDOInfo.message-composer";
+import * as _11 from "./FuzioIDOInfo.message-builder";
+import * as _13 from "./FuzioPool.client";
+import * as _14 from "./FuzioPool.message-composer";
+import * as _15 from "./FuzioPool.message-builder";
+import * as _17 from "./FuzioPoolList.client";
+import * as _18 from "./FuzioPoolList.message-composer";
+import * as _19 from "./FuzioPoolList.message-builder";
+import * as _21 from "./FuzioStaking.client";
+import * as _22 from "./FuzioStaking.message-composer";
+import * as _23 from "./FuzioStaking.message-builder";
+import * as _25 from "./Cw20.client";
+import * as _26 from "./Cw20.message-composer";
+import * as _27 from "./Cw20.message-builder";
 export declare namespace contracts {
     const FuzioNativePrediction: {
-        FuzioNativePredictionExecuteMsgBuilder: typeof _4.FuzioNativePredictionExecuteMsgBuilder;
-        FuzioNativePredictionQueryMsgBuilder: typeof _4.FuzioNativePredictionQueryMsgBuilder;
-        useFuzioNativePredictionGetAdminsQuery<TData = _0.AdminsResponse>({ client, options }: _3.FuzioNativePredictionGetAdminsQuery<TData>): any;
-        useFuzioNativePredictionTotalSpentQuery<TData_1 = _0.TotalSpentResponse>({ client, args, options }: _3.FuzioNativePredictionTotalSpentQuery<TData_1>): any;
-        useFuzioNativePredictionGetClaimInfoByUserQuery<TData_2 = _0.ClaimInfoResponse>({ client, args, options }: _3.FuzioNativePredictionGetClaimInfoByUserQuery<TData_2>): any;
-        useFuzioNativePredictionGetClaimInfoPerRoundQuery<TData_3 = _0.ClaimInfoResponse>({ client, args, options }: _3.FuzioNativePredictionGetClaimInfoPerRoundQuery<TData_3>): any;
-        useFuzioNativePredictionMyPendingRewardRoundQuery<TData_4 = _0.PendingRewardResponse>({ client, args, options }: _3.FuzioNativePredictionMyPendingRewardRoundQuery<TData_4>): any;
-        useFuzioNativePredictionGetUsersPerRoundQuery<TData_5 = _0.RoundUsersResponse>({ client, args, options }: _3.FuzioNativePredictionGetUsersPerRoundQuery<TData_5>): any;
-        useFuzioNativePredictionMyPendingRewardRoundsQuery<TData_6 = _0.PendingRewardRoundsResponse>({ client, args, options }: _3.FuzioNativePredictionMyPendingRewardRoundsQuery<TData_6>): any;
-        useFuzioNativePredictionMyPendingRewardQuery<TData_7 = _0.PendingRewardResponse>({ client, args, options }: _3.FuzioNativePredictionMyPendingRewardQuery<TData_7>): any;
-        useFuzioNativePredictionMyGameListQuery<TData_8 = _0.MyGameResponse>({ client, args, options }: _3.FuzioNativePredictionMyGameListQuery<TData_8>): any;
-        useFuzioNativePredictionFinishedRoundQuery<TData_9 = _0.FinishedRound>({ client, args, options }: _3.FuzioNativePredictionFinishedRoundQuery<TData_9>): any;
-        useFuzioNativePredictionMyCurrentPositionQuery<TData_10 = _0.MyCurrentPositionResponse>({ client, args, options }: _3.FuzioNativePredictionMyCurrentPositionQuery<TData_10>): any;
-        useFuzioNativePredictionStatusQuery<TData_11 = _0.StatusResponse>({ client, options }: _3.FuzioNativePredictionStatusQuery<TData_11>): any;
-        useFuzioNativePredictionConfigQuery<TData_12 = _0.Config>({ client, options }: _3.FuzioNativePredictionConfigQuery<TData_12>): any;
-        useFuzioNativePredictionModifyDevWalletMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionModifyDevWalletMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionRemoveAdminMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionRemoveAdminMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionAddAdminMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionAddAdminMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionResumeMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionResumeMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionHaltMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionHaltMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionCollectionWinningRoundMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionCollectionWinningRoundMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionCollectWinningsMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionCollectWinningsMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionCloseRoundMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionCloseRoundMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionBetBearMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionBetBearMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionBetBullMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionBetBullMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativePredictionUpdateConfigMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _3.FuzioNativePredictionUpdateConfigMutation>, "mutationFn"> | undefined): any;
-        fuzioNativePredictionQueryKeys: {
-            contract: readonly [{
-                readonly contract: "fuzioNativePrediction";
-            }];
-            address: (contractAddress: string) => readonly [{
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            config: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "config";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            status: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "status";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            myCurrentPosition: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "my_current_position";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            finishedRound: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "finished_round";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            myGameList: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "my_game_list";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            myPendingReward: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "my_pending_reward";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            myPendingRewardRounds: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "my_pending_reward_rounds";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            getUsersPerRound: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_users_per_round";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            myPendingRewardRound: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "my_pending_reward_round";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            getClaimInfoPerRound: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_claim_info_per_round";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            getClaimInfoByUser: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_claim_info_by_user";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            totalSpent: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "total_spent";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-            getAdmins: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_admins";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativePrediction";
-            }];
-        };
-        fuzioNativePredictionQueries: {
-            config: <TData_13 = _0.Config>({ client, options }: _3.FuzioNativePredictionConfigQuery<TData_13>) => UseQueryOptions<_0.Config, Error, TData_13>;
-            status: <TData_14 = _0.StatusResponse>({ client, options }: _3.FuzioNativePredictionStatusQuery<TData_14>) => UseQueryOptions<_0.StatusResponse, Error, TData_14>;
-            myCurrentPosition: <TData_15 = _0.MyCurrentPositionResponse>({ client, args, options }: _3.FuzioNativePredictionMyCurrentPositionQuery<TData_15>) => UseQueryOptions<_0.MyCurrentPositionResponse, Error, TData_15>;
-            finishedRound: <TData_16 = _0.FinishedRound>({ client, args, options }: _3.FuzioNativePredictionFinishedRoundQuery<TData_16>) => UseQueryOptions<_0.FinishedRound, Error, TData_16>;
-            myGameList: <TData_17 = _0.MyGameResponse>({ client, args, options }: _3.FuzioNativePredictionMyGameListQuery<TData_17>) => UseQueryOptions<_0.MyGameResponse, Error, TData_17>;
-            myPendingReward: <TData_18 = _0.PendingRewardResponse>({ client, args, options }: _3.FuzioNativePredictionMyPendingRewardQuery<TData_18>) => UseQueryOptions<_0.PendingRewardResponse, Error, TData_18>;
-            myPendingRewardRounds: <TData_19 = _0.PendingRewardRoundsResponse>({ client, args, options }: _3.FuzioNativePredictionMyPendingRewardRoundsQuery<TData_19>) => UseQueryOptions<_0.PendingRewardRoundsResponse, Error, TData_19>;
-            getUsersPerRound: <TData_20 = _0.RoundUsersResponse>({ client, args, options }: _3.FuzioNativePredictionGetUsersPerRoundQuery<TData_20>) => UseQueryOptions<_0.RoundUsersResponse, Error, TData_20>;
-            myPendingRewardRound: <TData_21 = _0.PendingRewardResponse>({ client, args, options }: _3.FuzioNativePredictionMyPendingRewardRoundQuery<TData_21>) => UseQueryOptions<_0.PendingRewardResponse, Error, TData_21>;
-            getClaimInfoPerRound: <TData_22 = _0.ClaimInfoResponse>({ client, args, options }: _3.FuzioNativePredictionGetClaimInfoPerRoundQuery<TData_22>) => UseQueryOptions<_0.ClaimInfoResponse, Error, TData_22>;
-            getClaimInfoByUser: <TData_23 = _0.ClaimInfoResponse>({ client, args, options }: _3.FuzioNativePredictionGetClaimInfoByUserQuery<TData_23>) => UseQueryOptions<_0.ClaimInfoResponse, Error, TData_23>;
-            totalSpent: <TData_24 = _0.TotalSpentResponse>({ client, args, options }: _3.FuzioNativePredictionTotalSpentQuery<TData_24>) => UseQueryOptions<_0.TotalSpentResponse, Error, TData_24>;
-            getAdmins: <TData_25 = _0.AdminsResponse>({ client, options }: _3.FuzioNativePredictionGetAdminsQuery<TData_25>) => UseQueryOptions<_0.AdminsResponse, Error, TData_25>;
-        };
+        FuzioNativePredictionExecuteMsgBuilder: typeof _3.FuzioNativePredictionExecuteMsgBuilder;
+        FuzioNativePredictionQueryMsgBuilder: typeof _3.FuzioNativePredictionQueryMsgBuilder;
         FuzioNativePredictionMsgComposer: typeof _2.FuzioNativePredictionMsgComposer;
         FuzioNativePredictionQueryClient: typeof _1.FuzioNativePredictionQueryClient;
         FuzioNativePredictionClient: typeof _1.FuzioNativePredictionClient;
     };
     const FuzioNativeIDO: {
-        FuzioNativeIDOExecuteMsgBuilder: typeof _9.FuzioNativeIDOExecuteMsgBuilder;
-        FuzioNativeIDOQueryMsgBuilder: typeof _9.FuzioNativeIDOQueryMsgBuilder;
-        useFuzioNativeIDOGetUserInfosQuery<TData = _5.UserInfosResponse>({ client, args, options }: _8.FuzioNativeIDOGetUserInfosQuery<TData>): any;
-        useFuzioNativeIDOGetClaimableTimeQuery<TData_1 = _5.TimeInfo>({ client, args, options }: _8.FuzioNativeIDOGetClaimableTimeQuery<TData_1>): any;
-        useFuzioNativeIDOGetClaimableAmountQuery<TData_2 = string>({ client, args, options }: _8.FuzioNativeIDOGetClaimableAmountQuery<TData_2>): any;
-        useFuzioNativeIDOGetSaleInfoQuery<TData_3 = _5.SaleInfo>({ client, options }: _8.FuzioNativeIDOGetSaleInfoQuery<TData_3>): any;
-        useFuzioNativeIDOGetUserInfoQuery<TData_4 = _5.UserInfoResponse>({ client, args, options }: _8.FuzioNativeIDOGetUserInfoQuery<TData_4>): any;
-        useFuzioNativeIDOGetStateInfoQuery<TData_5 = _5.State>({ client, options }: _8.FuzioNativeIDOGetStateInfoQuery<TData_5>): any;
-        useFuzioNativeIDOWithdrawTokenNotSoldByAdminMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _8.FuzioNativeIDOWithdrawTokenNotSoldByAdminMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativeIDOChangeAdminMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _8.FuzioNativeIDOChangeAdminMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativeIDOClaimTokenMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _8.FuzioNativeIDOClaimTokenMutation>, "mutationFn"> | undefined): any;
-        useFuzioNativeIDOBuyTokenMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _8.FuzioNativeIDOBuyTokenMutation>, "mutationFn"> | undefined): any;
-        fuzioNativeIDOQueryKeys: {
-            contract: readonly [{
-                readonly contract: "fuzioNativeIDO";
-            }];
-            address: (contractAddress: string) => readonly [{
-                readonly address: string;
-                readonly contract: "fuzioNativeIDO";
-            }];
-            getStateInfo: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_state_info";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativeIDO";
-            }];
-            getUserInfo: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_user_info";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativeIDO";
-            }];
-            getSaleInfo: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_sale_info";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativeIDO";
-            }];
-            getClaimableAmount: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_claimable_amount";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativeIDO";
-            }];
-            getClaimableTime: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_claimable_time";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativeIDO";
-            }];
-            getUserInfos: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "get_user_infos";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioNativeIDO";
-            }];
-        };
-        fuzioNativeIDOQueries: {
-            getStateInfo: <TData_6 = _5.State>({ client, options }: _8.FuzioNativeIDOGetStateInfoQuery<TData_6>) => UseQueryOptions<_5.State, Error, TData_6>;
-            getUserInfo: <TData_7 = _5.UserInfoResponse>({ client, args, options }: _8.FuzioNativeIDOGetUserInfoQuery<TData_7>) => UseQueryOptions<_5.UserInfoResponse, Error, TData_7>;
-            getSaleInfo: <TData_8 = _5.SaleInfo>({ client, options }: _8.FuzioNativeIDOGetSaleInfoQuery<TData_8>) => UseQueryOptions<_5.SaleInfo, Error, TData_8>;
-            getClaimableAmount: <TData_9 = string>({ client, args, options }: _8.FuzioNativeIDOGetClaimableAmountQuery<TData_9>) => UseQueryOptions<string, Error, TData_9>;
-            getClaimableTime: <TData_10 = _5.TimeInfo>({ client, args, options }: _8.FuzioNativeIDOGetClaimableTimeQuery<TData_10>) => UseQueryOptions<_5.TimeInfo, Error, TData_10>;
-            getUserInfos: <TData_11 = _5.UserInfosResponse>({ client, args, options }: _8.FuzioNativeIDOGetUserInfosQuery<TData_11>) => UseQueryOptions<_5.UserInfosResponse, Error, TData_11>;
-        };
-        FuzioNativeIDOMsgComposer: typeof _7.FuzioNativeIDOMsgComposer;
-        FuzioNativeIDOQueryClient: typeof _6.FuzioNativeIDOQueryClient;
-        FuzioNativeIDOClient: typeof _6.FuzioNativeIDOClient;
+        FuzioNativeIDOExecuteMsgBuilder: typeof _7.FuzioNativeIDOExecuteMsgBuilder;
+        FuzioNativeIDOQueryMsgBuilder: typeof _7.FuzioNativeIDOQueryMsgBuilder;
+        FuzioNativeIDOMsgComposer: typeof _6.FuzioNativeIDOMsgComposer;
+        FuzioNativeIDOQueryClient: typeof _5.FuzioNativeIDOQueryClient;
+        FuzioNativeIDOClient: typeof _5.FuzioNativeIDOClient;
     };
     const FuzioIDOInfo: {
-        FuzioIDOInfoExecuteMsgBuilder: typeof _14.FuzioIDOInfoExecuteMsgBuilder;
-        FuzioIDOInfoQueryMsgBuilder: typeof _14.FuzioIDOInfoQueryMsgBuilder;
-        useFuzioIDOInfoConfigQuery<TData = _10.Config>({ client, options }: _13.FuzioIDOInfoConfigQuery<TData>): any;
-        useFuzioIDOInfoUpdateOwnershipMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _13.FuzioIDOInfoUpdateOwnershipMutation>, "mutationFn"> | undefined): any;
-        useFuzioIDOInfoUpdateConfigMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _13.FuzioIDOInfoUpdateConfigMutation>, "mutationFn"> | undefined): any;
-        fuzioIDOInfoQueryKeys: {
-            contract: readonly [{
-                readonly contract: "fuzioIDOInfo";
-            }];
-            address: (contractAddress: string) => readonly [{
-                readonly address: string;
-                readonly contract: "fuzioIDOInfo";
-            }];
-            config: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "config";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioIDOInfo";
-            }];
-        };
-        fuzioIDOInfoQueries: {
-            config: <TData_1 = _10.Config>({ client, options }: _13.FuzioIDOInfoConfigQuery<TData_1>) => UseQueryOptions<_10.Config, Error, TData_1>;
-        };
-        FuzioIDOInfoMsgComposer: typeof _12.FuzioIDOInfoMsgComposer;
-        FuzioIDOInfoQueryClient: typeof _11.FuzioIDOInfoQueryClient;
-        FuzioIDOInfoClient: typeof _11.FuzioIDOInfoClient;
+        FuzioIDOInfoExecuteMsgBuilder: typeof _11.FuzioIDOInfoExecuteMsgBuilder;
+        FuzioIDOInfoQueryMsgBuilder: typeof _11.FuzioIDOInfoQueryMsgBuilder;
+        FuzioIDOInfoMsgComposer: typeof _10.FuzioIDOInfoMsgComposer;
+        FuzioIDOInfoQueryClient: typeof _9.FuzioIDOInfoQueryClient;
+        FuzioIDOInfoClient: typeof _9.FuzioIDOInfoClient;
     };
     const FuzioPool: {
-        FuzioPoolExecuteMsgBuilder: typeof _19.FuzioPoolExecuteMsgBuilder;
-        FuzioPoolQueryMsgBuilder: typeof _19.FuzioPoolQueryMsgBuilder;
-        useFuzioPoolFeeQuery<TData = _15.FeeResponse>({ client, options }: _18.FuzioPoolFeeQuery<TData>): any;
-        useFuzioPoolToken2ForToken1PriceQuery<TData_1 = _15.Token2ForToken1PriceResponse>({ client, args, options }: _18.FuzioPoolToken2ForToken1PriceQuery<TData_1>): any;
-        useFuzioPoolToken1ForToken2PriceQuery<TData_2 = _15.Token1ForToken2PriceResponse>({ client, args, options }: _18.FuzioPoolToken1ForToken2PriceQuery<TData_2>): any;
-        useFuzioPoolInfoQuery<TData_3 = _15.InfoResponse>({ client, options }: _18.FuzioPoolInfoQuery<TData_3>): any;
-        useFuzioPoolUpdateConfigMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _18.FuzioPoolUpdateConfigMutation>, "mutationFn"> | undefined): any;
-        useFuzioPoolSwapAndSendToMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _18.FuzioPoolSwapAndSendToMutation>, "mutationFn"> | undefined): any;
-        useFuzioPoolPassThroughSwapMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _18.FuzioPoolPassThroughSwapMutation>, "mutationFn"> | undefined): any;
-        useFuzioPoolSwapMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _18.FuzioPoolSwapMutation>, "mutationFn"> | undefined): any;
-        useFuzioPoolRemoveLiquidityMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _18.FuzioPoolRemoveLiquidityMutation>, "mutationFn"> | undefined): any;
-        useFuzioPoolAddLiquidityMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _18.FuzioPoolAddLiquidityMutation>, "mutationFn"> | undefined): any;
-        fuzioPoolQueryKeys: {
-            contract: readonly [{
-                readonly contract: "fuzioPool";
-            }];
-            address: (contractAddress: string) => readonly [{
-                readonly address: string;
-                readonly contract: "fuzioPool";
-            }];
-            info: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "info";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioPool";
-            }];
-            token1ForToken2Price: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "token1_for_token2_price";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioPool";
-            }];
-            token2ForToken1Price: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "token2_for_token1_price";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioPool";
-            }];
-            fee: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "fee";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioPool";
-            }];
-        };
-        fuzioPoolQueries: {
-            info: <TData_4 = _15.InfoResponse>({ client, options }: _18.FuzioPoolInfoQuery<TData_4>) => UseQueryOptions<_15.InfoResponse, Error, TData_4>;
-            token1ForToken2Price: <TData_5 = _15.Token1ForToken2PriceResponse>({ client, args, options }: _18.FuzioPoolToken1ForToken2PriceQuery<TData_5>) => UseQueryOptions<_15.Token1ForToken2PriceResponse, Error, TData_5>;
-            token2ForToken1Price: <TData_6 = _15.Token2ForToken1PriceResponse>({ client, args, options }: _18.FuzioPoolToken2ForToken1PriceQuery<TData_6>) => UseQueryOptions<_15.Token2ForToken1PriceResponse, Error, TData_6>;
-            fee: <TData_7 = _15.FeeResponse>({ client, options }: _18.FuzioPoolFeeQuery<TData_7>) => UseQueryOptions<_15.FeeResponse, Error, TData_7>;
-        };
-        FuzioPoolMsgComposer: typeof _17.FuzioPoolMsgComposer;
-        FuzioPoolQueryClient: typeof _16.FuzioPoolQueryClient;
-        FuzioPoolClient: typeof _16.FuzioPoolClient;
+        FuzioPoolExecuteMsgBuilder: typeof _15.FuzioPoolExecuteMsgBuilder;
+        FuzioPoolQueryMsgBuilder: typeof _15.FuzioPoolQueryMsgBuilder;
+        FuzioPoolMsgComposer: typeof _14.FuzioPoolMsgComposer;
+        FuzioPoolQueryClient: typeof _13.FuzioPoolQueryClient;
+        FuzioPoolClient: typeof _13.FuzioPoolClient;
     };
     const FuzioPoolList: {
-        FuzioPoolListExecuteMsgBuilder: typeof _24.FuzioPoolListExecuteMsgBuilder;
-        FuzioPoolListQueryMsgBuilder: typeof _24.FuzioPoolListQueryMsgBuilder;
-        useFuzioPoolListConfigQuery<TData = _20.ConfigResp>({ client, options }: _23.FuzioPoolListConfigQuery<TData>): any;
-        useFuzioPoolListPoolsQuery<TData_1 = _20.PoolsResp>({ client, options }: _23.FuzioPoolListPoolsQuery<TData_1>): any;
-        useFuzioPoolListTokensQuery<TData_2 = _20.TokensResp>({ client, options }: _23.FuzioPoolListTokensQuery<TData_2>): any;
-        useFuzioPoolListChangeConfigMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _23.FuzioPoolListChangeConfigMutation>, "mutationFn"> | undefined): any;
-        useFuzioPoolListListTokenMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _23.FuzioPoolListListTokenMutation>, "mutationFn"> | undefined): any;
-        useFuzioPoolListCreatePoolMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _23.FuzioPoolListCreatePoolMutation>, "mutationFn"> | undefined): any;
-        fuzioPoolListQueryKeys: {
-            contract: readonly [{
-                readonly contract: "fuzioPoolList";
-            }];
-            address: (contractAddress: string) => readonly [{
-                readonly address: string;
-                readonly contract: "fuzioPoolList";
-            }];
-            tokens: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "tokens";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioPoolList";
-            }];
-            pools: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "pools";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioPoolList";
-            }];
-            config: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "config";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioPoolList";
-            }];
-        };
-        fuzioPoolListQueries: {
-            tokens: <TData_3 = _20.TokensResp>({ client, options }: _23.FuzioPoolListTokensQuery<TData_3>) => UseQueryOptions<_20.TokensResp, Error, TData_3>;
-            pools: <TData_4 = _20.PoolsResp>({ client, options }: _23.FuzioPoolListPoolsQuery<TData_4>) => UseQueryOptions<_20.PoolsResp, Error, TData_4>;
-            config: <TData_5 = _20.ConfigResp>({ client, options }: _23.FuzioPoolListConfigQuery<TData_5>) => UseQueryOptions<_20.ConfigResp, Error, TData_5>;
-        };
-        FuzioPoolListMsgComposer: typeof _22.FuzioPoolListMsgComposer;
-        FuzioPoolListQueryClient: typeof _21.FuzioPoolListQueryClient;
-        FuzioPoolListClient: typeof _21.FuzioPoolListClient;
+        FuzioPoolListExecuteMsgBuilder: typeof _19.FuzioPoolListExecuteMsgBuilder;
+        FuzioPoolListQueryMsgBuilder: typeof _19.FuzioPoolListQueryMsgBuilder;
+        FuzioPoolListMsgComposer: typeof _18.FuzioPoolListMsgComposer;
+        FuzioPoolListQueryClient: typeof _17.FuzioPoolListQueryClient;
+        FuzioPoolListClient: typeof _17.FuzioPoolListClient;
     };
     const FuzioStaking: {
-        FuzioStakingExecuteMsgBuilder: typeof _29.FuzioStakingExecuteMsgBuilder;
-        FuzioStakingQueryMsgBuilder: typeof _29.FuzioStakingQueryMsgBuilder;
-        useFuzioStakingUnbondingInfoQuery<TData = _25.UnbondingInfoResponse>({ client, args, options }: _28.FuzioStakingUnbondingInfoQuery<TData>): any;
-        useFuzioStakingAllStakersQuery<TData_1 = _25.StakersListResponse>({ client, args, options }: _28.FuzioStakingAllStakersQuery<TData_1>): any;
-        useFuzioStakingStakerInfoQuery<TData_2 = _25.StakerInfoResponse>({ client, args, options }: _28.FuzioStakingStakerInfoQuery<TData_2>): any;
-        useFuzioStakingStateQuery<TData_3 = _25.StateResponse>({ client, args, options }: _28.FuzioStakingStateQuery<TData_3>): any;
-        useFuzioStakingConfigQuery<TData_4 = _25.ConfigResponse>({ client, options }: _28.FuzioStakingConfigQuery<TData_4>): any;
-        useFuzioStakingUpdateLockDurationMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingUpdateLockDurationMutation>, "mutationFn"> | undefined): any;
-        useFuzioStakingUpdateTokensAndDistributionMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingUpdateTokensAndDistributionMutation>, "mutationFn"> | undefined): any;
-        useFuzioStakingUpdateTokenContractMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingUpdateTokenContractMutation>, "mutationFn"> | undefined): any;
-        useFuzioStakingUpdateConfigMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingUpdateConfigMutation>, "mutationFn"> | undefined): any;
-        useFuzioStakingUpdateAdminMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingUpdateAdminMutation>, "mutationFn"> | undefined): any;
-        useFuzioStakingRedeemMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingRedeemMutation>, "mutationFn"> | undefined): any;
-        useFuzioStakingWithdrawMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingWithdrawMutation>, "mutationFn"> | undefined): any;
-        useFuzioStakingUnbondMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingUnbondMutation>, "mutationFn"> | undefined): any;
-        useFuzioStakingReceiveMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _28.FuzioStakingReceiveMutation>, "mutationFn"> | undefined): any;
-        fuzioStakingQueryKeys: {
-            contract: readonly [{
-                readonly contract: "fuzioStaking";
-            }];
-            address: (contractAddress: string) => readonly [{
-                readonly address: string;
-                readonly contract: "fuzioStaking";
-            }];
-            config: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "config";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioStaking";
-            }];
-            state: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "state";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioStaking";
-            }];
-            stakerInfo: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "staker_info";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioStaking";
-            }];
-            allStakers: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "all_stakers";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioStaking";
-            }];
-            unbondingInfo: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "unbonding_info";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "fuzioStaking";
-            }];
-        };
-        fuzioStakingQueries: {
-            config: <TData_5 = _25.ConfigResponse>({ client, options }: _28.FuzioStakingConfigQuery<TData_5>) => UseQueryOptions<_25.ConfigResponse, Error, TData_5>;
-            state: <TData_6 = _25.StateResponse>({ client, args, options }: _28.FuzioStakingStateQuery<TData_6>) => UseQueryOptions<_25.StateResponse, Error, TData_6>;
-            stakerInfo: <TData_7 = _25.StakerInfoResponse>({ client, args, options }: _28.FuzioStakingStakerInfoQuery<TData_7>) => UseQueryOptions<_25.StakerInfoResponse, Error, TData_7>;
-            allStakers: <TData_8 = _25.StakersListResponse>({ client, args, options }: _28.FuzioStakingAllStakersQuery<TData_8>) => UseQueryOptions<_25.StakersListResponse, Error, TData_8>;
-            unbondingInfo: <TData_9 = _25.UnbondingInfoResponse>({ client, args, options }: _28.FuzioStakingUnbondingInfoQuery<TData_9>) => UseQueryOptions<_25.UnbondingInfoResponse, Error, TData_9>;
-        };
-        FuzioStakingMsgComposer: typeof _27.FuzioStakingMsgComposer;
-        FuzioStakingQueryClient: typeof _26.FuzioStakingQueryClient;
-        FuzioStakingClient: typeof _26.FuzioStakingClient;
+        FuzioStakingExecuteMsgBuilder: typeof _23.FuzioStakingExecuteMsgBuilder;
+        FuzioStakingQueryMsgBuilder: typeof _23.FuzioStakingQueryMsgBuilder;
+        FuzioStakingMsgComposer: typeof _22.FuzioStakingMsgComposer;
+        FuzioStakingQueryClient: typeof _21.FuzioStakingQueryClient;
+        FuzioStakingClient: typeof _21.FuzioStakingClient;
     };
     const Cw20: {
-        Cw20ExecuteMsgBuilder: typeof _34.Cw20ExecuteMsgBuilder;
-        Cw20QueryMsgBuilder: typeof _34.Cw20QueryMsgBuilder;
-        useCw20DownloadLogoQuery<TData = _30.DownloadLogoResponse>({ client, options }: _33.Cw20DownloadLogoQuery<TData>): any;
-        useCw20MarketingInfoQuery<TData_1 = _30.MarketingInfoResponse>({ client, options }: _33.Cw20MarketingInfoQuery<TData_1>): any;
-        useCw20AllAccountsQuery<TData_2 = _30.AllAccountsResponse>({ client, args, options }: _33.Cw20AllAccountsQuery<TData_2>): any;
-        useCw20AllSpenderAllowancesQuery<TData_3 = _30.AllSpenderAllowancesResponse>({ client, args, options }: _33.Cw20AllSpenderAllowancesQuery<TData_3>): any;
-        useCw20AllAllowancesQuery<TData_4 = _30.AllAllowancesResponse>({ client, args, options }: _33.Cw20AllAllowancesQuery<TData_4>): any;
-        useCw20AllowanceQuery<TData_5 = _30.AllowanceResponse>({ client, args, options }: _33.Cw20AllowanceQuery<TData_5>): any;
-        useCw20MinterQuery<TData_6 = _30.MinterResponse>({ client, options }: _33.Cw20MinterQuery<TData_6>): any;
-        useCw20TokenInfoQuery<TData_7 = _30.TokenInfoResponse>({ client, options }: _33.Cw20TokenInfoQuery<TData_7>): any;
-        useCw20BalanceQuery<TData_8 = _30.BalanceResponse>({ client, args, options }: _33.Cw20BalanceQuery<TData_8>): any;
-        useCw20UploadLogoMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20UploadLogoMutation>, "mutationFn"> | undefined): any;
-        useCw20UpdateMarketingMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20UpdateMarketingMutation>, "mutationFn"> | undefined): any;
-        useCw20UpdateMinterMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20UpdateMinterMutation>, "mutationFn"> | undefined): any;
-        useCw20MintMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20MintMutation>, "mutationFn"> | undefined): any;
-        useCw20BurnFromMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20BurnFromMutation>, "mutationFn"> | undefined): any;
-        useCw20SendFromMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20SendFromMutation>, "mutationFn"> | undefined): any;
-        useCw20TransferFromMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20TransferFromMutation>, "mutationFn"> | undefined): any;
-        useCw20DecreaseAllowanceMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20DecreaseAllowanceMutation>, "mutationFn"> | undefined): any;
-        useCw20IncreaseAllowanceMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20IncreaseAllowanceMutation>, "mutationFn"> | undefined): any;
-        useCw20SendMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20SendMutation>, "mutationFn"> | undefined): any;
-        useCw20BurnMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20BurnMutation>, "mutationFn"> | undefined): any;
-        useCw20TransferMutation(options?: Omit<UseMutationOptions<import("@cosmjs/cosmwasm-stargate").ExecuteResult, Error, _33.Cw20TransferMutation>, "mutationFn"> | undefined): any;
-        cw20QueryKeys: {
-            contract: readonly [{
-                readonly contract: "cw20";
-            }];
-            address: (contractAddress: string) => readonly [{
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            balance: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "balance";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            tokenInfo: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "token_info";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            minter: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "minter";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            allowance: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "allowance";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            allAllowances: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "all_allowances";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            allSpenderAllowances: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "all_spender_allowances";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            allAccounts: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "all_accounts";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            marketingInfo: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "marketing_info";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-            downloadLogo: (contractAddress: string, args?: Record<string, unknown> | undefined) => readonly [{
-                readonly method: "download_logo";
-                readonly args: Record<string, unknown> | undefined;
-                readonly address: string;
-                readonly contract: "cw20";
-            }];
-        };
-        cw20Queries: {
-            balance: <TData_9 = _30.BalanceResponse>({ client, args, options }: _33.Cw20BalanceQuery<TData_9>) => UseQueryOptions<_30.BalanceResponse, Error, TData_9>;
-            tokenInfo: <TData_10 = _30.TokenInfoResponse>({ client, options }: _33.Cw20TokenInfoQuery<TData_10>) => UseQueryOptions<_30.TokenInfoResponse, Error, TData_10>;
-            minter: <TData_11 = _30.MinterResponse>({ client, options }: _33.Cw20MinterQuery<TData_11>) => UseQueryOptions<_30.MinterResponse, Error, TData_11>;
-            allowance: <TData_12 = _30.AllowanceResponse>({ client, args, options }: _33.Cw20AllowanceQuery<TData_12>) => UseQueryOptions<_30.AllowanceResponse, Error, TData_12>;
-            allAllowances: <TData_13 = _30.AllAllowancesResponse>({ client, args, options }: _33.Cw20AllAllowancesQuery<TData_13>) => UseQueryOptions<_30.AllAllowancesResponse, Error, TData_13>;
-            allSpenderAllowances: <TData_14 = _30.AllSpenderAllowancesResponse>({ client, args, options }: _33.Cw20AllSpenderAllowancesQuery<TData_14>) => UseQueryOptions<_30.AllSpenderAllowancesResponse, Error, TData_14>;
-            allAccounts: <TData_15 = _30.AllAccountsResponse>({ client, args, options }: _33.Cw20AllAccountsQuery<TData_15>) => UseQueryOptions<_30.AllAccountsResponse, Error, TData_15>;
-            marketingInfo: <TData_16 = _30.MarketingInfoResponse>({ client, options }: _33.Cw20MarketingInfoQuery<TData_16>) => UseQueryOptions<_30.MarketingInfoResponse, Error, TData_16>;
-            downloadLogo: <TData_17 = _30.DownloadLogoResponse>({ client, options }: _33.Cw20DownloadLogoQuery<TData_17>) => UseQueryOptions<_30.DownloadLogoResponse, Error, TData_17>;
-        };
-        Cw20MsgComposer: typeof _32.Cw20MsgComposer;
-        Cw20QueryClient: typeof _31.Cw20QueryClient;
-        Cw20Client: typeof _31.Cw20Client;
+        Cw20ExecuteMsgBuilder: typeof _27.Cw20ExecuteMsgBuilder;
+        Cw20QueryMsgBuilder: typeof _27.Cw20QueryMsgBuilder;
+        Cw20MsgComposer: typeof _26.Cw20MsgComposer;
+        Cw20QueryClient: typeof _25.Cw20QueryClient;
+        Cw20Client: typeof _25.Cw20Client;
     };
 }
